@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { CurrentDisplay } from '../../containers/CurrentDisplay/CurrentDisplay';
+import CurrentDisplay from '../../containers/CurrentDisplay/CurrentDisplay';
 import { HourDetail } from '../../components/HourDetail/HourDetail';
 import { Header } from '../../components/Header/Header';
+import { connect } from 'react-redux';
+import { setWeather } from '../../actions/index';
+
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 import moment from "moment";
 
@@ -25,10 +28,13 @@ class App extends Component {
     try {
       const response = await fetch('http://localhost:3001/api/v1/weather')
       const data = await response.json()
+      console.log(data);
       const currentData = cleanCurrently(data)
       const hourlyData = cleanHourly(data.hourly)
       const todayData = cleanToday(data.daily)
       const weekData = cleanWeek(data.daily)
+      this.props.handleCurrent(currentData)
+      console.log(this.props);
       this.setState({
         today: todayData,
         currently: currentData,
@@ -54,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <CurrentDisplay today={this.state.today} />
+        <CurrentDisplay />
         <section className="HourlyReport">
           {hourlyReport}
         </section>
@@ -68,4 +74,13 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  currentWeather: state.currentWeather
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  handleCurrent: (data) => dispatch(setWeather(data))
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

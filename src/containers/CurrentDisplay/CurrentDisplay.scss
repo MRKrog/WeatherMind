@@ -1,11 +1,15 @@
 .CurrentDisplay {
   width: 100%;
-  background:#231f20;
+  background: #dddddd;
+
+  
+
 
   .Today-Container {
     display: flex;
     justify-content: space-between;
     padding: 0 1em;
+    background:#231f20;
   }
 
 }
