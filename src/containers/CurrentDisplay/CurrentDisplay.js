@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 export class CurrentDisplay extends Component {
+  constructor() {
+    super()
+    this.state = {
+      testing: ''
+    }
+  }
 
   render() {
+
     return (
       <div className="CurrentDisplay">
-        
+
 
         <div className="Today-Container">
-          <p>{this.props.today.time}</p>
-          <p>{this.props.today.tempHigh}</p>
-          <p>{this.props.today.tempLow}</p>
+          ageagae
         </div>
 
       </div>
     )
   }
 }
+
+export const mapStateToProps = (state) => ({
+  currentWeather: state.currentWeather
+})
+
+
+export default connect(mapStateToProps)(CurrentDisplay)

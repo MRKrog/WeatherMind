@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+html {
+  background-image: url('./media/bg.jpg');
+  background-size: cover;
+}
+
 body {
   margin: 0;
   padding: 0;
