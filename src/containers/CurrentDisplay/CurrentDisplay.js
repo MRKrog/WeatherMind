@@ -11,12 +11,13 @@ export class CurrentDisplay extends Component {
   }
 
   render() {
+
     return (
       <div className="CurrentDisplay">
 
 
         <div className="Today-Container">
-ageagae
+          ageagae
         </div>
 
       </div>
