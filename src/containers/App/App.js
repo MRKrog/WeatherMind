@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import moment from "moment";
 
 import { Header } from '../../components/Header/Header';
 import CurrentDisplay from '../CurrentDisplay/CurrentDisplay';
@@ -9,7 +8,7 @@ import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay'
 
 import { Search } from '../Search/Search';
 
-import { setWeather, setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
+import { setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 
 class App extends Component {

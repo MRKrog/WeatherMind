@@ -30,9 +30,13 @@ export const mapStateToProps = (state) => ({
   today: state.today,
   current: state.current,
   details: state.details,
-  hourly: state.hourly,
-  weekly: state.weekly
 })
+
+CurrentDisplay.propTypes = {
+  today: PropTypes.object.isRequired,
+  current: PropTypes.object.isRequired,
+  details: PropTypes.object.isRequired,
+}
 
 
 export default connect(mapStateToProps)(CurrentDisplay)
