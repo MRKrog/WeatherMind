@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import CurrentDisplay from '../../containers/CurrentDisplay/CurrentDisplay';
-import { Search } from '../../containers/Search/Search';
-import { HourDetail } from '../../components/HourDetail/HourDetail';
-import { Header } from '../../components/Header/Header';
 import { connect } from 'react-redux';
-import { setWeather, setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
-
-import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 import moment from "moment";
 
+import { Header } from '../../components/Header/Header';
+import CurrentDisplay from '../CurrentDisplay/CurrentDisplay';
+import HourlyDisplay from '../HourlyDisplay/HourlyDisplay'
+import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay'
+
+import { Search } from '../Search/Search';
+
+import { setWeather, setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
+import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 
 class App extends Component {
   constructor() {
@@ -70,14 +72,12 @@ class App extends Component {
 
 
   render() {
-    // const { hourly } = this.state;
-    let hourlyReport;
-
-    if(Object.keys(this.props.hourly).length) {
-      hourlyReport = this.props.hourly.map(hour => {
-        return <HourDetail key={hour.time} time={hour.time} icon={hour.icon} temperature={hour.temperature} />
-      })
-    }
+    // let hourlyReport;
+    // if(Object.keys(this.props.hourly).length) {
+    //   hourlyReport = this.props.hourly.map(hour => {
+    //     return <HourDetail key={hour.time} time={hour.time} icon={hour.icon} temperature={hour.temperature} />
+    //   })
+    // }
 
     return (
       <div className="App">
@@ -104,9 +104,8 @@ class App extends Component {
             <Header />
             <Search handleSearch={this.handleSearch}/>
             <CurrentDisplay />
-            <section className="HourlyReport">
-              {hourlyReport}
-            </section>
+            <HourlyDisplay />
+            <WeeklyDisplay />
           </div>
         </div>
 
