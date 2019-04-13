@@ -4,7 +4,7 @@ import { Search } from '../../containers/Search/Search';
 import { HourDetail } from '../../components/HourDetail/HourDetail';
 import { Header } from '../../components/Header/Header';
 import { connect } from 'react-redux';
-import { setWeather } from '../../actions/index';
+import { setWeather, setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
 
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 import moment from "moment";
@@ -14,10 +14,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      today: [],
-      hourly: [],
-      currently: [],
-      weekly: []
+      loading: true
     }
   }
 
@@ -31,21 +28,28 @@ class App extends Component {
       const data = await response.json()
 
       console.log(data);
-      const currentData = cleanCurrently(data)
-      const hourlyData = cleanHourly(data.hourly)
-      const todayData = cleanToday(data.daily)
-      const weekData = cleanWeek(data.daily)
-      // this.props.handleCurrent(currentData)
-      // console.log(this.props);
-      this.setState({
-        today: todayData,
-        currently: currentData,
-        hourly: hourlyData,
-        weekly: weekData
-      })
+      const currentData = cleanCurrently(data[0])
+      this.props.setCurrent(currentData)
+
+      const hourlyData = cleanHourly(data[0].hourly)
+      this.props.setHourly(hourlyData)
+
+      const todayData = cleanToday(data[0].daily)
+      this.props.setToday(todayData)
+
+      const weekData = cleanWeek(data[0].daily)
+      this.props.setWeekly(weekData)
+
+      this.props.setDetails(data[1])
+
+      this.setState({ })
     } catch (error) {
       console.log(error.message);
     }
+  }
+
+  cleanWeather = (data) => {
+
   }
 
   getUserLocation = () => {
@@ -66,18 +70,20 @@ class App extends Component {
 
 
   render() {
-    const { hourly } = this.state;
+    // const { hourly } = this.state;
     let hourlyReport;
 
-    if(Object.keys(this.state.hourly).length) {
-      hourlyReport = hourly.map(hour => {
+    if(Object.keys(this.props.hourly).length) {
+      hourlyReport = this.props.hourly.map(hour => {
         return <HourDetail key={hour.time} time={hour.time} icon={hour.icon} temperature={hour.temperature} />
       })
     }
 
-
     return (
       <div className="App">
+        {
+
+        }
         <div className="marvel-device iphone-x">
           <div className="notch">
               <div className="camera"></div>
@@ -103,17 +109,26 @@ class App extends Component {
             </section>
           </div>
         </div>
+
       </div>
     );
   }
 }
 
 export const mapStateToProps = (state) => ({
-  currentWeather: state.currentWeather
+  today: state.today,
+  current: state.current,
+  details: state.details,
+  hourly: state.hourly,
+  weekly: state.weekly
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  handleCurrent: (data) => dispatch(setWeather(data))
+  setToday: (data) => dispatch(setToday(data)),
+  setCurrent: (data) => dispatch(setCurrent(data)),
+  setDetails: (data) => dispatch(setDetails(data)),
+  setHourly: (data) => dispatch(setHourly(data)),
+  setWeekly: (data) => dispatch(setWeek(data)),
 })
 
 
