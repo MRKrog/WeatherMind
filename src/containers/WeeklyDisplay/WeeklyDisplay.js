@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { WeeklyDetail } from '../../components/WeeklyDetail/WeeklyDetail'
+import { WeekDetail } from '../../components/WeekDetail/WeekDetail'
 
 export class WeeklyDisplay extends Component {
 
@@ -11,7 +11,7 @@ export class WeeklyDisplay extends Component {
         <div className="WeeklyDisplay">
           {
             weekly.map(week => {
-              return <WeeklyDetail {...week} />
+              return <WeekDetail key={week.time} {...week} />
             })
           }
         </div>

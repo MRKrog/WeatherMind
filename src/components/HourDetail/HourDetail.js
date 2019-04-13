@@ -14,7 +14,6 @@ export const HourDetail = ({ time, icon, temperature }) => {
     <div className="HourDetail">
       <h4>{time}</h4>
       <div className="weatherIcon">
-        <span className={icon}></span>
         <img src={icon === 'clear-night' ? clearNight : null} />
       </div>
       <h3>{temperature}</h3>

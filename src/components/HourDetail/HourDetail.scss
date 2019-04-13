@@ -1,14 +1,3 @@
-.HourlyReport {
-  display: flex;
-  width: 100%;
-  padding: 1em;
-  overflow-x: scroll;
-  background: #1d162b;
-  color: #fff;
-  border-top: #cccccc solid 1px;
-  border-bottom: #cccccc solid 1px;
-}
-
 .HourDetail {
   display: flex;
   flex-direction: column;
@@ -28,15 +17,14 @@
   }
 
   .weatherIcon {
-    width: 50px;
-    height: 50px;
+    display: block;
+    width: 40px;
 
-    .clear-night {
-      background-image: url('./media/icons/clear-night.png');
-      width: 50px;
-      height: 50px;
-      display: block;
-      background-repeat: no-repeat;
+    img {
+      width: 75%;
+      line-height: 1;
+      /* height: 30px; */
+      padding: .5em 0;
     }
 
   }

@@ -48,6 +48,7 @@ export const cleanWeek = (report) => {
         time: moment.unix(day.time).format("dddd"),
         tempHigh: Math.round(day.temperatureHigh),
         tempLow: Math.round(day.temperatureLow),
+        icon: day.icon,
       }
       acc.push(info)
     }

@@ -1,11 +1,14 @@
 
 
 @import './containers/App/App';
-@import './containers/CurrentDisplay/CurrentDisplay';
 @import './components/Header/Header';
-@import './components/HourDetail/HourDetail';
-@import './containers/WeeklyDisplay/WeeklyDisplay';
+@import './containers/CurrentDisplay/CurrentDisplay';
 
+@import './containers/HourlyDisplay/HourlyDisplay';
+@import './components/HourDetail/HourDetail';
+
+@import './containers/WeeklyDisplay/WeeklyDisplay';
+@import './components/WeekDetail/WeekDetail';
 
 * {
   box-sizing: border-box;
