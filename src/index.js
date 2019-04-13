@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom';
 import { rootReducer } from './reducers';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { connect } from 'react-redux';
+
+
+
 
 import './index.scss';
 import App from './containers/App/App';

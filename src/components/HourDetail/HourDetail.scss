@@ -1,10 +1,3 @@
-.HourlyReport {
-  display: flex;
-  width: 100%;
-  padding: 1em;
-  overflow-x: scroll;
-}
-
 .HourDetail {
   display: flex;
   flex-direction: column;
@@ -13,22 +6,25 @@
 
   h4 {
     margin: 0;
+    font-weight: 100;
+    font-size: .9em;
   }
 
   h3 {
     margin: 0;
+    font-weight: 500;
+    font-size: 1em;
   }
 
   .weatherIcon {
-    width: 50px;
-    height: 50px;
+    display: block;
+    width: 40px;
 
-    .clear-night {
-      background-image: url('./media/icons/clear-night.png');
-      width: 50px;
-      height: 50px;
-      display: block;
-      background-repeat: no-repeat;
+    img {
+      width: 75%;
+      line-height: 1;
+      /* height: 30px; */
+      padding: .5em 0;
     }
 
   }
