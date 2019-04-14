@@ -11,32 +11,21 @@
   .Button-Container {
     color: #fff;
     height: 45px;
-    display: -webkit-flex;
     display: flex;
+    justify-content: center;
     transition: all .5s ease;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
     background-size: 153% auto;
     color: white;
     box-shadow: 0 0 21px #eeeeee57;
-    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
-
-
-&:hover {
-  background-position: right center;
-}
-
-
+    background-image: linear-gradient(to right, #4d91ff 0%, #c2e9fb 51%, #a1c4fd 100%);
 
     &:hover {
-
+      background-position: right center;
     }
 
     .Details-Button {
-
+      line-height: 1.8;
+      font-size: 1.5em;
     }
 
   }

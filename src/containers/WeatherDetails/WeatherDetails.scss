@@ -1,19 +1,17 @@
 .WeatherDetails {
-  background: #231f20d4;
+  background: #231f206e;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0px;
   color: #fff;
+  display: flex;
 
   .WeatherDetails-Content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 300px;
+    position: relative;
     height: auto;
+    margin: auto;
     background: #1d162b;
-    transform: translate(-50%,-50%);
     box-shadow: 0px 2px 10px 3px #0000006b;
     display: flex;
     flex-direction: column;
@@ -22,9 +20,10 @@
 
     .Details-Close {
       position: absolute;
-      top: 0px;
-      right: 0px;
-      color: #fff;
+      top: 1px;
+      right: 4px;
+      color: #ffffff52;
+      font-size: 1.25em;
     }
 
     .Details-Content {
@@ -34,6 +33,44 @@
       .Details-Row {
         display: flex;
         flex-direction: row;
+        padding-bottom: 1em;
+
+        &:first-child {
+          width: 100%;
+          .Details-Col {
+            width: 100%;
+          }
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        .Details-Col {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          width: 50%;
+
+          label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            font-weight: 400;
+            padding-bottom: .5em;
+            opacity: .5;
+          }
+
+          h5 {
+            margin:0;
+            font-size: 1em;
+            font-weight: 500;
+          }
+        }
+
+        .Summary {
+          margin: 0;
+        }
+
       }
     }
   }

@@ -13,10 +13,7 @@ export class Search extends Component {
   render() {
     return (
       <div className="Search">
-        <Autocomplete
-            style={{width: '90%'}}
-            onPlaceSelected={(location) => this.handleSeleted(location)}
-        />
+        <Autocomplete onPlaceSelected={(location) => this.handleSeleted(location)} />
       </div>
     );
   }
