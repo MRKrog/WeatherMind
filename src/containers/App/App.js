@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Route, NavLink } from 'react-router-dom';
 
 import { Header } from '../Header/Header';
 import { Search } from '../Search/Search';
@@ -10,17 +11,14 @@ import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay';
 import WeatherDetails from '../WeatherDetails/WeatherDetails'
 import { Loading } from '../../components/Loading/Loading';
 
-
-
 import { setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super()
     this.state = {
       loading: true,
-      searchDisplay: false
     }
   }
 
@@ -28,11 +26,9 @@ class App extends Component {
     this.getUserLocation();
   }
 
-  handleSearchChange = (search) => {
-    this.setState({ searchDisplay: !search })
-  }
-
   getWeather = async (latitude, longitude) => {
+    console.log('in get', latitude);
+    console.log('in get', longitude);
     try {
       const response = await fetch(`http://localhost:3001/api/v1/weather/${latitude}/${longitude}`)
       const data = await response.json()
@@ -40,26 +36,17 @@ class App extends Component {
       console.log(data);
       const currentData = cleanCurrently(data[0])
       this.props.setCurrent(currentData)
-
       const hourlyData = cleanHourly(data[0].hourly)
       this.props.setHourly(hourlyData)
-
       const todayData = cleanToday(data[0].daily)
       this.props.setToday(todayData)
-
       const weekData = cleanWeek(data[0].daily)
       this.props.setWeekly(weekData)
-
       this.props.setDetails(data[1])
-
       this.setState({ loading: false })
     } catch (error) {
       console.log(error.message);
     }
-  }
-
-  cleanWeather = (data) => {
-
   }
 
   getUserLocation = () => {
@@ -75,7 +62,7 @@ class App extends Component {
   }
 
   render() {
-    const { loading, searchDisplay } = this.state;
+    const { loading } = this.state;
     return (
       <div className="App">
         <div className="marvel-device iphone-x">
@@ -121,14 +108,6 @@ class App extends Component {
   }
 }
 
-export const mapStateToProps = (state) => ({
-  today: state.today,
-  current: state.current,
-  details: state.details,
-  hourly: state.hourly,
-  weekly: state.weekly
-})
-
 export const mapDispatchToProps = (dispatch) => ({
   setToday: (data) => dispatch(setToday(data)),
   setCurrent: (data) => dispatch(setCurrent(data)),
@@ -137,5 +116,12 @@ export const mapDispatchToProps = (dispatch) => ({
   setWeekly: (data) => dispatch(setWeek(data)),
 })
 
+App.propTypes = {
+  setToday: PropTypes.func,
+  setCurrent: PropTypes.func,
+  setDetails: PropTypes.func,
+  setHourly: PropTypes.func,
+  setWeekly: PropTypes.func,
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

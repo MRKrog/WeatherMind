@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App Component should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="marvel-device iphone-x"
+  >
+    <div
+      className="notch"
+    >
+      <div
+        className="camera"
+      />
+      <div
+        className="speaker"
+      />
+    </div>
+    <div
+      className="top-bar"
+    />
+    <div
+      className="sleep"
+    />
+    <div
+      className="bottom-bar"
+    />
+    <div
+      className="volume"
+    />
+    <div
+      className="overflow"
+    >
+      <div
+        className="shadow shadow--tr"
+      />
+      <div
+        className="shadow shadow--tl"
+      />
+      <div
+        className="shadow shadow--br"
+      />
+      <div
+        className="shadow shadow--bl"
+      />
+    </div>
+    <div
+      className="inner-shadow"
+    />
+    <div
+      className="screen"
+    >
+      <Loading />
+    </div>
+  </div>
+</div>
+`;
