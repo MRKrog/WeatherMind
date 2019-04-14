@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Autocomplete from 'react-google-autocomplete';
+import PropTypes from 'prop-types';
 
 export class Search extends Component {
 
@@ -16,4 +17,8 @@ export class Search extends Component {
       </div>
     );
   }
+}
+
+Search.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
 }
