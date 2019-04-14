@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto+Condensed|Roboto:300,400');
 
+$fontRoboto: 'Roboto', sans-serif;
+$fontRobotoCond: 'Roboto Condensed', sans-serif;
+$fontOswald: 'Oswald', sans-serif;
 
 @import './containers/App/App';
-@import './components/Header/Header';
+@import './containers/Header/Header';
 @import './containers/CurrentDisplay/CurrentDisplay';
 
 @import './containers/HourlyDisplay/HourlyDisplay';
@@ -9,6 +13,10 @@
 
 @import './containers/WeeklyDisplay/WeeklyDisplay';
 @import './components/WeekDetail/WeekDetail';
+@import './containers/WeatherDetails/WeatherDetails';
+@import './components/Loading/Loading';
+@import './containers/Search/Search';
+
 
 * {
   box-sizing: border-box;

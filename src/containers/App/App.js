@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 
-import { Header } from '../../components/Header/Header';
-import CurrentDisplay from '../CurrentDisplay/CurrentDisplay';
-import HourlyDisplay from '../HourlyDisplay/HourlyDisplay'
-import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay'
-
+import { Header } from '../Header/Header';
 import { Search } from '../Search/Search';
+import CurrentDisplay from '../CurrentDisplay/CurrentDisplay';
+import HourlyDisplay from '../HourlyDisplay/HourlyDisplay';
+import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay';
+import WeatherDetails from '../WeatherDetails/WeatherDetails'
+import { Loading } from '../../components/Loading/Loading';
+
+
 
 import { setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
@@ -15,12 +19,17 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loading: true
+      loading: true,
+      searchDisplay: false
     }
   }
 
   componentDidMount() {
     this.getUserLocation();
+  }
+
+  handleSearchChange = (search) => {
+    this.setState({ searchDisplay: !search })
   }
 
   getWeather = async (latitude, longitude) => {
@@ -43,7 +52,7 @@ class App extends Component {
 
       this.props.setDetails(data[1])
 
-      this.setState({ })
+      this.setState({ loading: false })
     } catch (error) {
       console.log(error.message);
     }
@@ -54,35 +63,21 @@ class App extends Component {
   }
 
   getUserLocation = () => {
-    console.log('in user');
     navigator.geolocation.getCurrentPosition(position => {
       let latitude = position.coords.latitude
       let longitude = position.coords.longitude
-      console.log('position', position.coords);
       this.getWeather(latitude, longitude)
     });
   }
 
   handleSearch = (latitude, longitude) => {
-    console.log('search, lat', latitude);
-    console.log('search, long', longitude);
     this.getWeather(latitude,longitude)
   }
 
-
   render() {
-    // let hourlyReport;
-    // if(Object.keys(this.props.hourly).length) {
-    //   hourlyReport = this.props.hourly.map(hour => {
-    //     return <HourDetail key={hour.time} time={hour.time} icon={hour.icon} temperature={hour.temperature} />
-    //   })
-    // }
-
+    const { loading, searchDisplay } = this.state;
     return (
       <div className="App">
-        {
-
-        }
         <div className="marvel-device iphone-x">
           <div className="notch">
               <div className="camera"></div>
@@ -100,14 +95,27 @@ class App extends Component {
           </div>
           <div className="inner-shadow"></div>
           <div className="screen">
-            <Header />
-            <Search handleSearch={this.handleSearch}/>
-            <CurrentDisplay />
-            <HourlyDisplay />
-            <WeeklyDisplay />
+          {
+            loading ?
+            <Loading /> :
+            <div className="Weather-Content">
+              <Route path="/" component={Header} />
+              <Route path="/Search" render={() => {
+                return <Search handleSearch={this.handleSearch} />
+              }}/>
+              <CurrentDisplay />
+              <HourlyDisplay />
+              <WeeklyDisplay />
+              <NavLink className="Button-Container" to="/WeatherDetails">
+                <div className="Details-Button">
+                  <i className="fas fa-plus-square"></i>
+                </div>
+              </NavLink>
+              <Route exact path="/WeatherDetails" component={WeatherDetails} />
+            </div>
+          }
           </div>
         </div>
-
       </div>
     );
   }

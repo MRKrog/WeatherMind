@@ -1,8 +1,7 @@
 .CurrentDisplay {
   width: 100%;
-  background: #1e182b;
   color:#fff;
-  padding: 2em 1em 1em 1em;
+  padding: 2em 1em .5em 1em;
 
   .CurrentWeather {
     display: flex;
@@ -14,14 +13,25 @@
       font-weight: 300;
     }
     h4 {
-      margin:0;
+      margin: 0;
       font-weight: 100;
-      font-size: 1em;
+      line-height: 1.5;
+      font-size: .8em;
     }
     span {
       margin:0;
       font-size: 5em;
-      font-weight: 300;
+      font-weight: 200;
+      position: relative;
+      line-height: 1.2;
+
+      &::after {
+        content: "\B0";
+        font-size: .8em;
+        top: 3px;
+        line-height: 1;
+        position: absolute;
+      }
     }
   }
 
