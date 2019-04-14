@@ -6,18 +6,22 @@
   .todayDay {
     margin: 0;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 400;
+    width: 19%;
+    text-align: left;
   }
 
   .weatherIcon {
-    width: 50px;
-    height: 50px;
+    display: block;
+    width: 40px;
 
-    .clear-night {
-      width: 50px;
-      height: 50px;
-      display: block;
+    img {
+      width: 75%;
+      line-height: 1;
+      height: 41px;
+      padding: .55em 0;
     }
+
   }
 
   .tempLevels {
@@ -38,7 +42,7 @@
 
     .tempLow {
       margin: 0;
-      color: #a5a5a5;
+  opacity: .6;
     }
   }
 }

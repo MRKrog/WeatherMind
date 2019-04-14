@@ -37,6 +37,15 @@ export const cleanToday = (report) => {
     time: moment.unix(today.time).format("dddd"),
     tempHigh: Math.round(today.temperatureHigh),
     tempLow: Math.round(today.temperatureLow),
+    summary: today.summary,
+    sunriseTime: moment.unix(today.sunriseTime).format("LT"),
+    sunsetTime:  moment.unix(today.sunsetTime).format("LT"),
+    windSpeed: today.windSpeed,
+    humidity: today.humidity * 100,
+    visibility: today.visibility,
+    uvIndex: today.uvIndex,
+    precipProbability: today.precipProbability * 100,
+    moonPhase: today.moonPhase * 100,
   }
 }
 
