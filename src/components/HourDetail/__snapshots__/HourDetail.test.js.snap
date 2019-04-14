@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HourDetail should match the snapshot for all other times 1`] = `
+<div
+  className="HourDetail"
+>
+  <h4>
+    04
+  </h4>
+  <div
+    className="weatherIcon"
+  >
+    <img
+      alt="partly-cloudy-night"
+      src="partly-cloudy-night.svg"
+    />
+  </div>
+  <h3>
+    45
+  </h3>
+</div>
+`;
+
+exports[`HourDetail should match the snapshot index is 0 aka "NOW"  1`] = `
+<div
+  className="HourDetail"
+>
+  <h4>
+    Now
+  </h4>
+  <div
+    className="weatherIcon"
+  >
+    <img
+      alt="partly-cloudy-night"
+      src="partly-cloudy-night.svg"
+    />
+  </div>
+  <h3>
+    45
+  </h3>
+</div>
+`;

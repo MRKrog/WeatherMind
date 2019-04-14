@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+
 export class WeatherDetails extends Component {
 
   render(){
@@ -65,28 +66,8 @@ export class WeatherDetails extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  current: state.current,
   today: state.today,
 })
 
 
 export default connect(mapStateToProps)(WeatherDetails)
-
-// apparentTemperature:
-// 66
-// humidity:
-// 0.18
-// icon:
-// "partly-cloudy-day"
-// pressure:
-// 1003.69
-// summary:
-// "Partly Cloudy"
-// temperature:
-// 66
-// time:
-// 1555276440
-// uvIndex:
-// 4
-// visibility:
-// 3.82

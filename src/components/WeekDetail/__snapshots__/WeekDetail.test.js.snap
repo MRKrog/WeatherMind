@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekDetail should match the snapshot 1`] = `
+<div
+  className="WeekDetail"
+>
+  <h5
+    className="todayDay"
+  >
+    04
+  </h5>
+  <div
+    className="weatherIcon"
+  >
+    <img
+      alt="fog"
+      src="fog.svg"
+    />
+  </div>
+  <section
+    className="tempLevels"
+  >
+    <h6
+      className="tempHigh"
+    >
+      45
+    </h6>
+    <h6
+      className="tempLow"
+    >
+      15
+    </h6>
+  </section>
+</div>
+`;
