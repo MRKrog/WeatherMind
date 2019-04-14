@@ -8,9 +8,9 @@ export class HourlyDisplay extends Component {
     const { hourly } = this.props
     return (
       <div className="HourlyDisplay">
-        {  
-          hourly.map(hour => {
-            return <HourDetail key={hour.time} {...hour} />
+        {
+          hourly.map((hour, index) => {
+            return <HourDetail key={hour.time} {...hour} index={index}/>
           })
         }
       </div>

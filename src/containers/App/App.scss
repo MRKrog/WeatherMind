@@ -2,6 +2,45 @@
   text-align: center;
   background-color: #282c3466;
   width: 100%;
+
+  .Weather-Content {
+    position: relative;
+    height: 100%;
+  }
+
+  .Button-Container {
+    color: #fff;
+    height: 45px;
+    display: -webkit-flex;
+    display: flex;
+    transition: all .5s ease;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 153% auto;
+    color: white;
+    box-shadow: 0 0 21px #eeeeee57;
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+
+
+&:hover {
+  background-position: right center;
+}
+
+
+
+    &:hover {
+
+    }
+
+    .Details-Button {
+
+    }
+
+  }
+
 }
 
 .marvel-device {
@@ -14,12 +53,13 @@
 		position: relative;
 		height: 100%;
 		z-index: 3;
-		background: #231f20;
 		overflow: hidden;
 		border-radius: 1px;
 		box-shadow: 0 0 0 3px #111;
     display: flex;
     flex-direction: column;
+    background-image: url('./media/WeatherBG.jpg');
+    background-size: cover;
 	}
 
 	.top-bar, .bottom-bar {

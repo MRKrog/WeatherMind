@@ -12,7 +12,7 @@ import snow from '../../media/icons/snow.svg';
 import wind from '../../media/icons/wind.svg';
 import fog from '../../media/icons/fog.svg';
 
-export const HourDetail = ({ time, icon, temperature }) => {
+export const HourDetail = ({ time, icon, temperature, index }) => {
 
   let iconImage = '';
 
@@ -57,7 +57,7 @@ export const HourDetail = ({ time, icon, temperature }) => {
 
   return (
     <div className="HourDetail">
-      <h4>{time}</h4>
+      <h4>{index === 0 ? 'Now': time}</h4>
       <div className="weatherIcon">
         <img alt={icon} src={iconImage} />
       </div>

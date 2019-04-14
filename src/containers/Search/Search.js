@@ -12,10 +12,12 @@ export class Search extends Component {
 
   render() {
     return (
-      <Autocomplete
-          style={{width: '90%'}}
-          onPlaceSelected={(location) => this.handleSeleted(location)}
-      />
+      <div className="Search">
+        <Autocomplete
+            style={{width: '90%'}}
+            onPlaceSelected={(location) => this.handleSeleted(location)}
+        />
+      </div>
     );
   }
 }
