@@ -10,7 +10,7 @@ export const cleanCurrently = (data) => {
     temperature: Math.round(currently.temperature),
     visibility: currently.visibility,
     humidity: currently.humidity,
-    windSpped: currently.windSpped,
+    windSpeed: currently.windSpeed,
     pressure: currently.pressure,
     uvIndex: currently.uvIndex
   }
@@ -50,7 +50,6 @@ export const cleanToday = (report) => {
 }
 
 export const cleanWeek = (report) => {
-  console.log(report);
   const weeklyArray = report.data.reduce((acc, day, idx) => {
     if(idx > 0) {
       let info = {

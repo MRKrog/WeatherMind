@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherDetails WeatherDetails Component should match the snapshot 1`] = `
+<div
+  className="WeatherDetails"
+>
+  <div
+    className="WeatherDetails-Content"
+  >
+    <NavLink
+      className="Details-Close"
+      to="/"
+    >
+      <i
+        className="fas fa-window-close"
+      />
+    </NavLink>
+    <div
+      className="Details-Content"
+    >
+      <div
+        className="Details-Row"
+      >
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Today's Summary
+          </label>
+          <h5
+            className="Summary"
+          >
+            Partly cloudy throughout the day.
+          </h5>
+        </section>
+      </div>
+      <div
+        className="Details-Row"
+      >
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Sunrise
+          </label>
+          <h5
+            className="rise"
+          >
+            6:24 AM
+          </h5>
+        </section>
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Sunset
+          </label>
+          <h5
+            className="rise"
+          >
+            7:37 PM
+          </h5>
+        </section>
+      </div>
+      <div
+        className="Details-Row"
+      >
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Wind speed
+          </label>
+          <h5
+            className="wind"
+          >
+            1.24
+             mph
+          </h5>
+        </section>
+        <section
+          className="Details-Col"
+        >
+          <label>
+            humidity
+          </label>
+          <h5
+            className="humidity"
+          >
+            39
+            %
+          </h5>
+        </section>
+      </div>
+      <div
+        className="Details-Row"
+      >
+        <section
+          className="Details-Col"
+        >
+          <label>
+            visibility
+          </label>
+          <h5
+            className="visibility"
+          >
+            4.32
+             mi
+          </h5>
+        </section>
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Uv index
+          </label>
+          <h5
+            className="uvIndex"
+          >
+            6
+          </h5>
+        </section>
+      </div>
+      <div
+        className="Details-Row"
+      >
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Chance of rain
+          </label>
+          <h5
+            className="precipProbability"
+          >
+            13
+            %
+          </h5>
+        </section>
+        <section
+          className="Details-Col"
+        >
+          <label>
+            Moon phase
+          </label>
+          <h5
+            className="moonPhase"
+          >
+            33
+            %
+          </h5>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
