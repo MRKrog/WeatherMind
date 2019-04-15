@@ -19,6 +19,7 @@ export class App extends Component {
     super()
     this.state = {
       loading: true,
+      error: '',
     }
   }
 
@@ -27,13 +28,10 @@ export class App extends Component {
   }
 
   getWeather = async (latitude, longitude) => {
-    console.log('in get', latitude);
-    console.log('in get', longitude);
     try {
       const response = await fetch(`http://localhost:3001/api/v1/weather/${latitude}/${longitude}`)
+      if(!response.ok) { throw new Error('Fetch Call Cannot Be Made')}
       const data = await response.json()
-
-      console.log(data);
       const currentData = cleanCurrently(data[0])
       this.props.setCurrent(currentData)
       const hourlyData = cleanHourly(data[0].hourly)
@@ -45,14 +43,13 @@ export class App extends Component {
       this.props.setDetails(data[1])
       this.setState({ loading: false })
     } catch (error) {
-      console.log(error.message);
+      this.setState({ error: error.message })
     }
   }
 
   getUserLocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
-      let latitude = position.coords.latitude
-      let longitude = position.coords.longitude
+      const { latitude, longitude } = position.coords
       this.getWeather(latitude, longitude)
     });
   }

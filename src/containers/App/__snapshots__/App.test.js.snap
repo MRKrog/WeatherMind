@@ -56,3 +56,100 @@ exports[`App App Component should match the snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`App App Component should match the snapshot when loading is false 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="marvel-device iphone-x"
+  >
+    <div
+      className="notch"
+    >
+      <div
+        className="camera"
+      />
+      <div
+        className="speaker"
+      />
+    </div>
+    <div
+      className="top-bar"
+    />
+    <div
+      className="sleep"
+    />
+    <div
+      className="bottom-bar"
+    />
+    <div
+      className="volume"
+    />
+    <div
+      className="overflow"
+    >
+      <div
+        className="shadow shadow--tr"
+      />
+      <div
+        className="shadow shadow--tl"
+      />
+      <div
+        className="shadow shadow--br"
+      />
+      <div
+        className="shadow shadow--bl"
+      />
+    </div>
+    <div
+      className="inner-shadow"
+    />
+    <div
+      className="screen"
+    >
+      <div
+        className="Weather-Content"
+      >
+        <Route
+          component={[Function]}
+          path="/"
+        />
+        <Route
+          path="/Search"
+          render={[Function]}
+        />
+        <ConnectFunction />
+        <ConnectFunction />
+        <ConnectFunction />
+        <NavLink
+          className="Button-Container"
+          to="/WeatherDetails"
+        >
+          <div
+            className="Details-Button"
+          >
+            <i
+              className="fas fa-plus-square"
+            />
+          </div>
+        </NavLink>
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(WeatherDetails)",
+              "type": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            }
+          }
+          exact={true}
+          path="/WeatherDetails"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
