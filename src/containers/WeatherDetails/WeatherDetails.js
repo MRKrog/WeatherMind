@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class WeatherDetails extends Component {
 
@@ -70,5 +71,8 @@ export const mapStateToProps = (state) => ({
   today: state.today,
 })
 
+WeatherDetails.propTypes = {
+  today: PropTypes.object.isRequired,
+}
 
 export default connect(mapStateToProps)(WeatherDetails)
