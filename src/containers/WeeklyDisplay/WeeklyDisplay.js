@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { WeekDetail } from '../../components/WeekDetail/WeekDetail'
+import { WeekDetail } from '../../components/WeekDetail/WeekDetail';
+import PropTypes from 'prop-types';
 
 export class WeeklyDisplay extends Component {
 
@@ -17,5 +18,9 @@ export class WeeklyDisplay extends Component {
 export const mapStateToProps = (state) => ({
     weekly: state.weekly
 })
+
+WeeklyDisplay.propTypes = {
+  weekly: PropTypes.array.isRequired,
+}
 
 export default connect(mapStateToProps)(WeeklyDisplay)
