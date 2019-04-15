@@ -23,7 +23,7 @@ export const mapStateToProps = (state) => ({
 })
 
 HourlyDisplay.propTypes = {
-  // handleSearch: PropTypes.func.isRequired,
+  hourly: PropTypes.array.isRequired,
 }
 
 export default connect(mapStateToProps)(HourlyDisplay)

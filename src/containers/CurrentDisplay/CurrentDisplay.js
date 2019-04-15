@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-
 export class CurrentDisplay extends Component {
-
   render() {
     const { current, details, today } = this.props;
     return (
@@ -37,6 +35,5 @@ CurrentDisplay.propTypes = {
   current: PropTypes.object.isRequired,
   details: PropTypes.object.isRequired,
 }
-
 
 export default connect(mapStateToProps)(CurrentDisplay)

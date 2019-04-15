@@ -30,7 +30,7 @@ describe('WeeklyDisplay', () => {
 
   describe('mapStateToProps', () => {
 
-    it('should', () => {
+    it('should return an object with the today array’', () => {
 
     })
 
