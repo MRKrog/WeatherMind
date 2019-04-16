@@ -8,13 +8,10 @@ WeatherMind is my take on the Apple IOS weather app. This weather app gets real 
 
 ## Preview:
 
-<img src="src/media/bgApple.jpg" alt="src/media/bgApple.jpg">
 
-Select Weather Location            |  See Weather Details
+Select Weather Location            |  Search Weather
 :-------------------------:|:-------------------------:
-<img src="src/media/bgApple.jpg" alt="src/media/bgApple.jpg">  |  <img src="src/media/bgApple.jpg" alt="src/media/bgApple.jpg">
-**Toggling list item completion**             |  **Changing note color**
-<img src="src/media/bgApple.jpg" alt="">  |  <img src="src/media/bgApple.jpg" alt="">
+<img src="src/media/PartOne.gif" alt="WeatherMind">  |  <img src="src/media/PartTwo.gif" alt="WeatherMind">
 
 ## Getting Started:
 
@@ -26,7 +23,7 @@ clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind```
 cd into directory and run npm install: ```$ npm install```
 
 #### Create a .env file and your google api key like below:
-REACT_APP_GOOGLE_API_KEY=<api key here>
+REACT_APP_GOOGLE_API_KEY=apiKeyHere
 
 (make sure to add this .env file to your .gitignore)
 
@@ -54,18 +51,14 @@ WeatherMind was built using:
 - [Redux.js](https://redux.js.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](https://expressjs.com/)
-- [DarkSky API] (https://darksky.net/dev)
-- [Google Maps API] (https://developers.google.com/maps/documentation/)
+- [DarkSky API](https://darksky.net/dev)
+- [Google Maps API](https://developers.google.com/maps/documentation/)
 
 And tested using:
 - [Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
 
 ## Contributors
 - [Michael Krog](https://github.com/MRKrog)
-
----
-
-*@ Turing School of Software and Design, Denver, CO.*
 
 ---
 **[Back to top](https://github.com/MRKrog/WeatherMind/blob/master/README.md#WeatherMind)**
