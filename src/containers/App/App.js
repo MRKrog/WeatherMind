@@ -11,17 +11,10 @@ import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay';
 import WeatherDetails from '../WeatherDetails/WeatherDetails'
 import { Loading } from '../../components/Loading/Loading';
 
-import { setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
+import * as actions from '../../actions/index';
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 
 export class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loading: true,
-      error: '',
-    }
-  }
 
   componentDidMount() {
     this.getUserLocation();
@@ -41,9 +34,9 @@ export class App extends Component {
       const weekData = cleanWeek(data[0].daily)
       this.props.setWeekly(weekData)
       this.props.setDetails(data[1])
-      this.setState({ loading: false })
+      this.props.setLoading(false)
     } catch (error) {
-      this.setState({ error: error.message })
+      this.props.setError(error.message)
     }
   }
 
@@ -59,7 +52,7 @@ export class App extends Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading } = this.props;
     return (
       <div className="App">
         <div className="marvel-device iphone-x">
@@ -105,12 +98,19 @@ export class App extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  error: state.error,
+  loading: state.loading
+})
+
 export const mapDispatchToProps = (dispatch) => ({
-  setToday: (data) => dispatch(setToday(data)),
-  setCurrent: (data) => dispatch(setCurrent(data)),
-  setDetails: (data) => dispatch(setDetails(data)),
-  setHourly: (data) => dispatch(setHourly(data)),
-  setWeekly: (data) => dispatch(setWeek(data)),
+  setToday: (data) => dispatch(actions.setToday(data)),
+  setCurrent: (data) => dispatch(actions.setCurrent(data)),
+  setDetails: (data) => dispatch(actions.setDetails(data)),
+  setHourly: (data) => dispatch(actions.setHourly(data)),
+  setWeekly: (data) => dispatch(actions.setWeek(data)),
+  setError: (data) => dispatch(actions.setError(data)),
+  setLoading: (data) => dispatch(actions.setLoading(data))
 })
 
 App.propTypes = {
@@ -119,6 +119,10 @@ App.propTypes = {
   setDetails: PropTypes.func,
   setHourly: PropTypes.func,
   setWeekly: PropTypes.func,
+  setError: PropTypes.func,
+  setLoading: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

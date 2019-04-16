@@ -110,6 +110,7 @@ describe('CurrentDisplay', () => {
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)
     })
+    
   })
 
 })

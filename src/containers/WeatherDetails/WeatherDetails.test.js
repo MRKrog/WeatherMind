@@ -51,9 +51,8 @@ describe('WeatherDetails', () => {
           precipProbability: 13,
         },
       }
-      // Execution
+
       const mappedProps = mapStateToProps(mockState)
-      // Expectation
       expect(mappedProps).toEqual(expected)
     })
   })
