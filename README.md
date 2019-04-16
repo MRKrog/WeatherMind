@@ -25,6 +25,11 @@ clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind```
 
 cd into directory and run npm install: ```$ npm install```
 
+#### Create a .env file and your google api key like below:
+REACT_APP_GOOGLE_API_KEY=<api key here>
+
+(make sure to add this .env file to your .gitignore)
+
 launch in your browser: ```$ npm start ```
 
 ### Backend
