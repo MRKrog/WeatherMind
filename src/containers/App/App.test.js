@@ -139,10 +139,27 @@ describe('App', () => {
 
   describe('mapStateToProps', () => {
 
-    it('should ', () => {})
+    it('should return an object with loading', () => {
+      const mockState = {
+        error: 'Bad Fetch Call',
+        filter: 'SET_ERROR'
+      }
+      const expected = { error: 'Bad Fetch Call' }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
+
+    it('should return an object with error', () => {
+      const mockState = {
+        error: true,
+        filter: 'SET_ERROR'
+      }
+      const expected = { error: true }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
 
   })
-
 
   describe('mapDispatchToProps', () => {
 
@@ -199,6 +216,28 @@ describe('App', () => {
 
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.setWeekly(mockData); // prop action
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    it('should call dispatch for setError', () => {
+      const mockData = 'Bad Fetch Call'
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setError(mockData); //action
+
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setError(mockData); // prop action
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    it('should call dispatch for setLoading', () => {
+      const mockData = true;
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setLoading(mockData); //action
+
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setLoading(mockData); // prop action
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
