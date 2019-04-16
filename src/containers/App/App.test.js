@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App, mapDispatchToProps } from './App';
-import { setCurrent, setDetails, setHourly, setToday, setWeek } from '../../actions/index';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
+import { setCurrent, setDetails, setHourly, setToday, setWeek, setLoading, setError } from '../../actions/index';
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';
 jest.mock('../../utility/cleanReports')
 
@@ -36,6 +36,8 @@ describe('App', () => {
     let mockSetHourly = jest.fn()
     let mockSetToday = jest.fn()
     let mockSetWeekly = jest.fn()
+    let mockSetLoading = jest.fn()
+    let mockSetError = jest.fn()
 
     let mockUrl = "http://localhost:3001/api/v1/weather/51.1/45.3"
     let mockLatitude = 51.1;
@@ -48,6 +50,8 @@ describe('App', () => {
              setHourly={mockSetHourly}
              setToday={mockSetToday}
              setWeekly={mockSetWeekly}
+             setLoading={mockSetLoading}
+             setError={mockSetError}
         />
       )
 
@@ -61,13 +65,6 @@ describe('App', () => {
     it('should match the snapshot', () => {
       expect(wrapper).toMatchSnapshot()
     });
-
-    it('should have a default state', () => {
-      expect(wrapper.state()).toEqual({
-        loading: true,
-        error: '',
-      })
-    })
 
     it('should invoke the getUserLocation method when componentDidMount fires', () => {
       const instance = wrapper.instance()
@@ -113,13 +110,12 @@ describe('App', () => {
     it('should throw an error when the fetch call is bad when getWeather is invoked', async () => {
       window.fetch.mockImplementationOnce(() => Promise.reject(new Error('Fetch Call Cannot Be Made')))
       await wrapper.instance().getWeather(mockLatitude, mockLongitude)
-      expect(wrapper.state('error')).toEqual("Fetch Call Cannot Be Made")
+      expect(mockSetError).toHaveBeenCalledWith("Fetch Call Cannot Be Made")
     })
 
     it('should change state of loading to false when getWeather is invoked', async () => {
-      expect(wrapper.state('loading')).toEqual(true)
       await wrapper.instance().getWeather(mockLatitude, mockLongitude)
-      expect(wrapper.state('loading')).toEqual(false)
+      expect(mockSetLoading).toHaveBeenCalledWith(false)
     })
 
     it('should call fetch with mockUrl when getWeather is invoked', async () => {
@@ -140,6 +136,13 @@ describe('App', () => {
     })
 
   })
+
+  describe('mapStateToProps', () => {
+
+    it('should ', () => {})
+
+  })
+
 
   describe('mapDispatchToProps', () => {
 

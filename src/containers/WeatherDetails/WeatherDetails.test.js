@@ -34,8 +34,26 @@ describe('WeatherDetails', () => {
   })
 
   describe('mapStateToProps', () => {
-    it('should ', () => {
 
+    it('should return an object with the today object', () => {
+      const mockState = {
+        today: {
+          humidity: 39,
+          moonPhase: 33,
+          precipProbability: 13,
+        },
+        filter: 'SET_TODAY'
+      }
+      const expected = {
+        today: {
+          humidity: 39,
+          moonPhase: 33,
+          precipProbability: 13,
+        },
+      }
+
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
     })
   })
 

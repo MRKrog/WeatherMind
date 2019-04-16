@@ -27,3 +27,13 @@ export const setWeek = (info) => ({
   type: "SET_WEEK",
   info
 })
+
+export const setError = (error) => ({
+  type: "SET_ERROR",
+  error
+})
+
+export const setLoading = (loading) => ({
+  type: "SET_LOADING",
+  loading
+})

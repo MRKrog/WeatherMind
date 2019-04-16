@@ -51,7 +51,47 @@ exports[`App App Component should match the snapshot 1`] = `
     <div
       className="screen"
     >
-      <Loading />
+      <div
+        className="Weather-Content"
+      >
+        <Route
+          component={[Function]}
+          path="/"
+        />
+        <Route
+          path="/Search"
+          render={[Function]}
+        />
+        <ConnectFunction />
+        <ConnectFunction />
+        <ConnectFunction />
+        <NavLink
+          className="Button-Container"
+          to="/WeatherDetails"
+        >
+          <div
+            className="Details-Button"
+          >
+            <i
+              className="fas fa-plus-square"
+            />
+          </div>
+        </NavLink>
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(WeatherDetails)",
+              "type": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            }
+          }
+          exact={true}
+          path="/WeatherDetails"
+        />
+      </div>
     </div>
   </div>
 </div>

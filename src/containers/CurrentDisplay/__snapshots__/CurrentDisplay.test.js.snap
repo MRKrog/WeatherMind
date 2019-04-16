@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentDisplay CurrentDisplay Component should match the snapshot 1`] = `
+<div
+  className="CurrentDisplay"
+>
+  <div
+    className="CurrentWeather"
+  >
+    <h3>
+      Denver
+    </h3>
+    <h4>
+      Mostly Cloudy
+    </h4>
+    <span>
+      73
+    </span>
+  </div>
+  <div
+    className="Today-Container"
+  >
+    <h5
+      className="todayDay"
+    >
+      Monday
+       
+      <span>
+        today
+      </span>
+    </h5>
+    <section
+      className="tempLevels"
+    >
+      <h6
+        className="tempHigh"
+      >
+        74
+      </h6>
+      <h6
+        className="tempLow"
+      >
+        45
+      </h6>
+    </section>
+  </div>
+</div>
+`;
