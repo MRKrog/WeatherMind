@@ -8,8 +8,6 @@
 /.pnp
 .pnp.js
 
-/public/index.html
-
 # testing
 /coverage
 
