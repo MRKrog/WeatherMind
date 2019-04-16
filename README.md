@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WeatherMind
 
-## Available Scripts
+## Overview:
 
-In the project directory, you can run:
+WeatherMind is my take on the Apple IOS weather app. This weather app gets real time weather of your location. As well you can search locations all over the world for their current weather. When searching for weather you are able to see the forecast by the hour and the week. Also you can find more details about the current weather in your location. I built this app with the intent on converting this into a react native application.
 
-### `npm start`
+[More information about original assignment can be found here](http://frontend.turing.io/projects/binary-challenge.html)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Preview:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<img src="src/media/bgApple.jpg" alt="src/media/bgApple.jpg">
 
-### `npm test`
+Select Weather Location            |  See Weather Details
+:-------------------------:|:-------------------------:
+<img src="src/media/bgApple.jpg" alt="src/media/bgApple.jpg">  |  <img src="src/media/bgApple.jpg" alt="src/media/bgApple.jpg">
+**Toggling list item completion**             |  **Changing note color**
+<img src="src/media/bgApple.jpg" alt="">  |  <img src="src/media/bgApple.jpg" alt="">
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started:
 
-### `npm run build`
+These instructions will get a copy of the project up and running on your local machine for usage and testing purposes.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+cd into directory and run npm install: ```$ npm install```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+launch in your browser: ```$ npm start ```
 
-### `npm run eject`
+### Backend
+clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind-api```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+cd into directory and run npm install: ``` $ npm install ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+launch in your browser: ``` $ npm start ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Development and Extensions Notes:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Built out functionality in React Native and used on mobile applications \
+- Add weather history features STLY & STLW weather display information \
+- Add Map feature to search locations through points on a map \
+- Add ability save places and locations
 
-## Learn More
+### Technologies Used
+WeatherMind was built using:
+- [SCSS](https://sass-lang.com/)
+- [React.js](https://reactjs.org/)
+- [React-Router](https://reacttraining.com/react-router/)
+- [Redux.js](https://redux.js.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
+- [DarkSky API] (https://darksky.net/dev)
+- [Google Maps API] (https://developers.google.com/maps/documentation/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+And tested using:
+- [Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributors
+- [Michael Krog](https://github.com/MRKrog)
 
-### Code Splitting
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+*@ Turing School of Software and Design, Denver, CO.*
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
+**[Back to top](https://github.com/MRKrog/WeatherMind/blob/master/README.md#WeatherMind)**

@@ -11,7 +11,7 @@ export class WeatherDetails extends Component {
       <div className="WeatherDetails">
         <div className="WeatherDetails-Content">
           <NavLink className="Details-Close" to="/">
-            <i className="fas fa-window-close"></i>
+            <i className="fas fa-times"></i>
           </NavLink>
           <div className="Details-Content">
             <div className="Details-Row">
@@ -37,7 +37,7 @@ export class WeatherDetails extends Component {
               </section>
               <section className="Details-Col">
                 <label>humidity</label>
-                <h5 className="humidity">{humidity}%</h5>
+                <h5 className="humidity">{Math.floor(humidity)}%</h5>
               </section>
             </div>
             <div className="Details-Row">
