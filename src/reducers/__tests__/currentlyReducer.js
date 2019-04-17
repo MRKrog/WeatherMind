@@ -17,11 +17,8 @@ const mockCurrent = {
 describe('currentlyReducer', () => {
 
   it('should return the intial state', () => {
-    // Setup
     const expected = {}
-    // Execution
     const result = currentlyReducer(undefined, {})
-    // Expectation
     expect(result).toEqual(expected)
   })
 

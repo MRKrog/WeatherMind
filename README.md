@@ -32,6 +32,10 @@ Start up in your terminal: ```$ npm start ```
 ### Backend
 clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind-api```
 
+create keys.js file at the same level as app.js - add the following
+export const apiKey = apiKey
+export const googleApi = 'apiKey
+
 cd into directory and run npm install: ``` $ npm install ```
 
 Start up in your terminal: ``` $ npm start ```
