@@ -12,7 +12,7 @@ exports[`WeatherDetails WeatherDetails Component should match the snapshot 1`] =
       to="/"
     >
       <i
-        className="fas fa-window-close"
+        className="fas fa-times"
       />
     </NavLink>
     <div

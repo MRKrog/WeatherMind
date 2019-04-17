@@ -53,7 +53,7 @@ export class WeatherDetails extends Component {
             <div className="Details-Row">
               <section className="Details-Col">
                 <label>Chance of rain</label>
-                <h5 className="precipProbability">{precipProbability}%</h5>
+                <h5 className="precipProbability">{Math.floor(precipProbability)}%</h5>
               </section>
               <section className="Details-Col">
                 <label>Moon phase</label>
