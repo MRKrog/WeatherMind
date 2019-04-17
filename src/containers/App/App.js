@@ -49,6 +49,7 @@ export class App extends Component {
   }
 
   handleSearch = (latitude, longitude) => {
+    this.props.setLoading(true)
     this.getWeather(latitude,longitude)
   }
 
