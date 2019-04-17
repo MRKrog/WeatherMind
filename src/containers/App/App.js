@@ -10,6 +10,7 @@ import HourlyDisplay from '../HourlyDisplay/HourlyDisplay';
 import WeeklyDisplay from '../WeeklyDisplay/WeeklyDisplay';
 import WeatherDetails from '../WeatherDetails/WeatherDetails'
 import { Loading } from '../../components/Loading/Loading';
+import Error from '../../components/Error/Error';
 
 import * as actions from '../../actions/index';
 import { cleanCurrently, cleanHourly, cleanToday, cleanWeek } from '../../utility/cleanReports';

@@ -4,7 +4,6 @@
 
 WeatherMind is my take on the Apple IOS weather app. This weather app gets real time weather of your location. As well you can search locations all over the world for their current weather. When searching for weather you are able to see the forecast by the hour and the week. Also you can find more details about the current weather in your location. I built this app with the intent on converting this into a react native application.
 
-[More information about original assignment can be found here](http://frontend.turing.io/projects/binary-challenge.html)
 
 ## Preview:
 
@@ -22,19 +21,20 @@ clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind```
 
 cd into directory and run npm install: ```$ npm install```
 
-#### Create a .env file and your google api key like below:
+Create a .env file and your google api key like below:
+
 REACT_APP_GOOGLE_API_KEY=apiKeyHere
 
 (make sure to add this .env file to your .gitignore)
 
-launch in your browser: ```$ npm start ```
+Start up in your terminal: ```$ npm start ```
 
 ### Backend
 clone down the repo: ```$ git clone https://github.com/MRKrog/WeatherMind-api```
 
 cd into directory and run npm install: ``` $ npm install ```
 
-launch in your browser: ``` $ npm start ```
+Start up in your terminal: ``` $ npm start ```
 
 ## Future Development and Extensions Notes:
 
